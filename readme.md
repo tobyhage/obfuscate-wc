@@ -2,65 +2,79 @@
 
 # obfuscate-link web component
 
-### Web component to obfuscate emails, links and more 
+### Web component to obfuscate emails, links and more
 
 Give Crawlers & Spammers a harder time collecting your infos while still display the infos nicely.
 
 ```html
-    <obfuscate-link id="obfuscate" email="aXZvQGxvY2FsLmRldg==">custom link</obfuscate-link>
-    <br />
-    <obfuscate-link id="obfuscate" email="aXZvQGxvY2FsLmRldg=="></obfuscate-link>
-    <br />
-    <obfuscate-link id="obfuscate" tel="aXZvQGxvY2FsLmRldg=="></obfuscate-link>
-    <br />
-    <obfuscate-link id="obfuscate" sms="aXZvQGxvY2FsLmRldg=="></obfuscate-link>
-    <br />
-    <obfuscate-link id="obfuscate" facetime="aXZvQGxvY2FsLmRldg=="></obfuscate-link>
-    <br />
-    <obfuscate-link id="obfuscate" href="aXZvQGxvY2FsLmRldg=="></obfuscate-link>
+<obfuscate-link id="obfuscate" email="aXZvQGxvY2FsLmRldg==">custom link</obfuscate-link>
+<br />
+<obfuscate-link id="obfuscate" email="aXZvQGxvY2FsLmRldg=="></obfuscate-link>
+<br />
+<obfuscate-link id="obfuscate" tel="aXZvQGxvY2FsLmRldg=="></obfuscate-link>
+<br />
+<obfuscate-link id="obfuscate" sms="aXZvQGxvY2FsLmRldg=="></obfuscate-link>
+<br />
+<obfuscate-link id="obfuscate" facetime="aXZvQGxvY2FsLmRldg=="></obfuscate-link>
+<br />
+<obfuscate-link id="obfuscate" href="aXZvQGxvY2FsLmRldg=="></obfuscate-link>
 ```
 
-### Encoding 
+### Encoding
 
 The `obfuscate-link` web component expects an already encoded value.
-The default encoding is base64. 
-Please base64 encode your link yourself before entering it.  
+The default encoding is base64.
+Please base64 encode your link yourself before entering it.
 
 You can add your own decoder to provide a more sophisticated encoding and hence you must also have your own encoder to encode your value.
 
 Add your decoder like this:
 
 ```html
-  <script>
-    function decoder(value) {
-      console.log('custom decoder');
-      return window.atob(value);
-    }
-    obfuscate.decoder = decoder;
-  </script>
+<script>
+  function decoder(value) {
+    console.log('custom decoder');
+    return window.atob(value);
+  }
+  obfuscate.decoder = decoder;
+</script>
 ```
+
+# Styling
+
+This component supports styling the generated link via Shadow Parts. You can style the <a> element with:
+
+```css
+obfuscate-link::part(link) {
+  color: red;
+  text-decoration: underline wavy;
+}
+```
+
 ## Using this component
 
 There are three strategies we recommend for using web components built with Stencil.
 
 ### Script tag
 
-- Put a script tag similar to this `<script type='module' src='https://unpkg.com/obfuscate-link-web-component@0.0.7/www/build/obfuscate-link.esm.js'></script>` in the head of your index.html
+- Put a script tag similar to this `<script type='module' src='https://unpkg.com/obfuscate-link-wc@1.0.0/www/build/obfuscate-link.esm.js'></script>` in the head of your index.html
 - Then you can use the element anywhere in your template, JSX, html etc
 
 ### Node Modules
+
 - Run `npm install my-component --save`
-- Put a script tag similar to this `<script type='module' src='node_modules/obfuscate-link-web-component/www/build/obfuscate-link.esm.js'></script>` in the head of your index.html
+- Put a script tag similar to this `<script type='module' src='node_modules/obfuscate-link-wc/www/build/obfuscate-link.esm.js'></script>` in the head of your index.html
 - Then you can use the element anywhere in your template, JSX, html etc
 
 ### In an app
-- Run `npm install obfuscate-link-web-component --save`
-- Add an import to the npm packages `import { ObfuscateLink } from 'obfuscate-link-web-component';customElements.define('obfuscate-link', ObfuscateLink);`
+
+- Run `npm install obfuscate-link-wc --save`
+- Add an import to the npm packages `import { ObfuscateLink } from 'obfuscate-link-wc';customElements.define('obfuscate-link', ObfuscateLink);`
 - Then you can use the element anywhere in your template, JSX, html etc
 
+## Disclaimer
 
-## Disclaimer  
-Obfuscation can still be decoded by sophisticated bots quite easily but still better than nothing. 
+Obfuscation can still be decoded by sophisticated bots quite easily but still better than nothing.
 Using the web component itself is already blocking spammer that look for mailto links.
 
 ## Development
@@ -85,6 +99,8 @@ npm test
 ```
 
 ## Credits
+
+This is a fork of https://github.com/ivoba/obfuscate-wc.
 
 Heavily inspired by https://github.com/coston/react-obfuscate  
 I was migrating from react to plain HTML and JS, so i needed something that worked as web component.

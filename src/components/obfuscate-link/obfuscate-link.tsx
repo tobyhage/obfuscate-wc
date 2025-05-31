@@ -2,7 +2,7 @@ import { Component, Element, Listen, Prop, State, h } from '@stencil/core';
 
 @Component({
   tag: 'obfuscate-link',
-  shadow: false,
+  shadow: true,
 })
 export class ObfuscateLink {
   @Prop() email: string;
@@ -77,7 +77,7 @@ export class ObfuscateLink {
       text = this.innerEl;
     }
 
-    return <a href={link}>{text}</a>;
+    return <a part="link" href={link}>{text}</a>;
   }
 
   render() {
