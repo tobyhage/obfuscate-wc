@@ -15,13 +15,6 @@ export class ObfuscateLink {
   @Element() host: HTMLElement;
   @State() human: boolean = false;
 
-  innerEl: any;
-
-  connectedCallback(): void {
-    this.innerEl = this.host.innerHTML;
-    this.host.innerHTML = '';
-  }
-
   @Listen('focus', { target: 'window' })
   handleFocus() {
     this.human = true;
@@ -73,11 +66,7 @@ export class ObfuscateLink {
       link = text;
     }
 
-    if (this.innerEl) {
-      text = this.innerEl;
-    }
-
-    return <a part="link" href={link}>{text}</a>;
+    return <a part="link" href={link}><slot>{text}</slot></a>;
   }
 
   render() {
