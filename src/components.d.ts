@@ -12,6 +12,7 @@ export namespace Components {
         "facetime": string;
         "headers": Record<string, string>;
         "href": string;
+        "linkTitle": string;
         "sms": string;
         "tel": string;
     }
@@ -34,6 +35,7 @@ declare namespace LocalJSX {
         "facetime"?: string;
         "headers"?: Record<string, string>;
         "href"?: string;
+        "linkTitle"?: string;
         "sms"?: string;
         "tel"?: string;
     }

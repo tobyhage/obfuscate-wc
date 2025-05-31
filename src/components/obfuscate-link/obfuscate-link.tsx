@@ -11,6 +11,7 @@ export class ObfuscateLink {
   @Prop() facetime: string;
   @Prop() href: string;
   @Prop() headers: Record<string, string>;
+  @Prop() linkTitle: string;
   @Prop() decoder: (value: string) => string = (value: string) => window.atob(value);
   @Element() host: HTMLElement;
   @State() human: boolean = false;
@@ -66,7 +67,7 @@ export class ObfuscateLink {
       link = text;
     }
 
-    return <a part="link" href={link}><slot>{text}</slot></a>;
+    return <a part="link" href={link} title={this.linkTitle}><slot>{text}</slot></a>;
   }
 
   render() {

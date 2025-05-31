@@ -53,15 +53,16 @@ obfuscate-link::part(link) {
 
 ## Properties
 
-| Property   | Attribute  | Description | Type                        | Default                                 |
-| ---------- | ---------- | ----------- | --------------------------- | --------------------------------------- |
-| `decoder`  | --         |             | `(value: string) => string` | `(value: string) => window.atob(value)` |
-| `email`    | `email`    |             | `string`                    | `undefined`                             |
-| `facetime` | `facetime` |             | `string`                    | `undefined`                             |
-| `headers`  | --         |             | `{ [x: string]: string; }`  | `undefined`                             |
-| `href`     | `href`     |             | `string`                    | `undefined`                             |
-| `sms`      | `sms`      |             | `string`                    | `undefined`                             |
-| `tel`      | `tel`      |             | `string`                    | `undefined`                             |
+| Property    | Attribute    | Description | Type                        | Default                                 |
+| ----------- | ------------ | ----------- | --------------------------- | --------------------------------------- |
+| `decoder`   | --           |             | `(value: string) => string` | `(value: string) => window.atob(value)` |
+| `email`     | `email`      |             | `string`                    | `undefined`                             |
+| `facetime`  | `facetime`   |             | `string`                    | `undefined`                             |
+| `headers`   | --           |             | `{ [x: string]: string; }`  | `undefined`                             |
+| `href`      | `href`       |             | `string`                    | `undefined`                             |
+| `linkTitle` | `link-title` |             | `string`                    | `undefined`                             |
+| `sms`       | `sms`        |             | `string`                    | `undefined`                             |
+| `tel`       | `tel`        |             | `string`                    | `undefined`                             |
 
 
 ## Shadow Parts

@@ -11,7 +11,7 @@ Give Crawlers & Spammers a harder time collecting your infos while still display
 <br />
 <obfuscate-link id="obfuscate" email="aXZvQGxvY2FsLmRldg=="></obfuscate-link>
 <br />
-<obfuscate-link id="obfuscate" tel="aXZvQGxvY2FsLmRldg=="></obfuscate-link>
+<obfuscate-link id="obfuscate" tel="aXZvQGxvY2FsLmRldg==" link-text="Call us"></obfuscate-link>
 <br />
 <obfuscate-link id="obfuscate" sms="aXZvQGxvY2FsLmRldg=="></obfuscate-link>
 <br />
@@ -102,10 +102,10 @@ npm test
 
 This is a fork of https://github.com/ivoba/obfuscate-wc.
 
-Heavily inspired by https://github.com/coston/react-obfuscate  
+Heavily inspired by https://github.com/coston/react-obfuscate
 I was migrating from react to plain HTML and JS, so i needed something that worked as web component.
 
-I also enjoyed reading this posts:  
+I also enjoyed reading this posts:
 https://antonvroemans.medium.com/expand-your-spam-mailing-list-with-cloudflares-poor-obfuscation-fdc3cc8f4ccd
 https://www.corewebvitals.io/pagespeed/say-goodbye-to-cloudflare-email-obfuscation
 https://derkuba.de/content/posts/1021/stencil-builds-for-using-component-lib/
