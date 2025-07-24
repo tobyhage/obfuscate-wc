@@ -36,6 +36,11 @@ export class ObfuscateLink {
     this.human = true;
   }
 
+  @Listen('touchstart', { target: 'window' })
+  handleTouchStart() {
+    this.human = true;
+  }
+
   generateLink() {
     let link = '';
     let text = '';
